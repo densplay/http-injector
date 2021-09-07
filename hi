@@ -20,7 +20,7 @@ sed -i "s/connection_mode = $find/connection_mode = $mode/g" settings.ini
 sleep 1
 
 killprocess() {
-echo -e "${RED} vpn service stopped" 
+echo -e "${RED}VPN service stopped" 
 kill -9 $(lsof -t -i:9092) 2> /dev/null
 python pidkill.py >> /dev/null &
 rm logs.txt 2> /dev/null
@@ -44,17 +44,19 @@ function connect() {
 		exit
 	fi
 
-	echo -e "${YELLOW}---logs----${SCOLOR}"
+	echo -e "${YELLOW}===========[STARTED]===========${SCOLOR}"
 
 	sleep 10
 	cat logs.txt
 
 	var=`cat logs.txt | grep "CONNECTED SUCCESSFULLY"|awk '{print $4}'`
 	if [ "$var" = "SUCCESSFULLY" ];then 
-		echo -e "${GREEN}---Tunneling  starts-----"
+		echo -e "${YELLOW}==========[CONNECTED]=========="
 		echo -e "${SCOLOR}"
+		screen -AmdS nohub ./pinger
 		chmod +x proxification
 		iptables --flush
+		echo -e "${GREEN}"
 		./proxification 2> /dev/null
 	else
 		echo -e "${RED}failed! ${SCOLOR}"
@@ -93,7 +95,3 @@ do
 	fi 
 
 done
-
-
-
-
