@@ -47,7 +47,7 @@ class sshRunn:
 				for line in response.stdout:
 					line = line.decode('utf-8',errors='ignore').lstrip(r'(debug1|Warning):').strip() + '\r'
 					if 'compat_banner: no match:' in line:
-						self.logs(f"{G}SSH-2.0-{line.split(':')[2]}{GR}")
+						self.logs(f"{G}SSH-2.0-{line.split(':')[2].strip()}{GR}")
 					elif 'Server host key' in line:self.logs(G+line+GR)
 					elif 'kex: algorithm:' in line:self.logs(G+line+GR)
 					elif 'kex: host key algorithm:' in line:self.logs(G+line+GR)
