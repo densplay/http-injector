@@ -3,11 +3,12 @@ http ssl ssh tunneling vpn for android and linux devices
 
 # whats new!
 
-* Now support combination ssl + payload 
+* Now support combination ssl + payload
+* Now support websocket
 
 # packages :
 
-[+] - apt install -y git openssh sshpass netcat-openbsd corkscrew screen python3
+[+] - apt install -y git openssh sshpass netcat-openbsd corkscrew screen python3 getconf tsu
 
 
 # configuration :
@@ -25,7 +26,7 @@ past your data into file settings.ini
 
 (root is required in android )
 
-[+] - git clone https://github.com/abdoxfox/http-ssl-ssh-injector.git
+[+] - git clone https://github.com/jeelsboobz/http-injector.git
 
 # steps :
 
@@ -35,9 +36,9 @@ past your data into file settings.ini
 
 [+] - sudo  or tsu for termux  #run as root
 
-[+] - chmod +x runvpn.sh
+[+] - chmod +x hi
 
-[+] - ./runvpn.sh
+[+] - sudo ./hi
 
 * choose your connection mode:
 
