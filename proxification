@@ -30,7 +30,7 @@ chmod +x redsocks
 chmod +x redsocks64
 bit=`getconf LONG_BIT`
 if [ "$bit" = "64" ];then 
-	./redsocks64 -c redsocks.conf 2> /dev/null
+	./redsocks64 -c redsocks.conf
 else
-	./redsocks -c redsocks.conf 2> /dev/null
+	./redsocks -c redsocks.conf
 fi
