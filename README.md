@@ -8,7 +8,8 @@ http ssl ssh tunneling vpn for android and linux devices
 
 # packages :
 
-[+] - apt install -y git openssh sshpass netcat-openbsd corkscrew screen python3 getconf tsu
+[+] ```apt install -y git openssh sshpass netcat-openbsd corkscrew screen python3 getconf tsu```
+[+] ```install $(sudo which iptables) -t $PREFIX/bin```
 
 
 # configuration :
@@ -26,7 +27,7 @@ past your data into file settings.ini
 
 (root is required in android )
 
-[+] - git clone https://github.com/jeelsboobz/http-injector.git
+[+] ```git clone https://github.com/jeelsboobz/http-injector.git```
 
 # steps :
 
