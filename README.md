@@ -34,13 +34,11 @@ past your data into file settings.ini
 
 * setup your custom payload and proxy (proxy not required)
 
-[+] - cd http-ssl-ssh-injector
+[+] ```cd http-injector```
 
-[+] - sudo  or tsu for termux  #run as root
+[+] ```chmod +x hi```
 
-[+] - chmod +x hi
-
-[+] - sudo ./hi
+[+] ```sudo ./hi```
 
 * choose your connection mode:
 
