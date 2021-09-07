@@ -1,3 +1,4 @@
+#!/bin/bash
 
 # create new chain
 iptables -t nat -N PROXY
@@ -26,4 +27,10 @@ trap "iptables -t nat -D OUTPUT -j PROXY; iptables -t nat -F PROXY; iptables -t 
 
 # run socksifier
 chmod +x redsocks
-./redsocks -c redsocks.conf 2> /dev/null
+chmod +x redsocks64
+bit=`getconf LONG_BIT`
+if [ "$bit" = "64" ];then 
+	./redsocks64 -c redsocks.conf 2> /dev/null
+else
+	./redsocks -c redsocks.conf 2> /dev/null
+fi
