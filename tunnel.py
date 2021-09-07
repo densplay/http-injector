@@ -36,7 +36,7 @@ class Tun(injector):
 		return mode
 	def tunneling(self,client,sockt):
 		connected = True
-		while connected == True:
+		while connected == connected:
 			r, w, x = select.select([client,sockt], [], [client,sockt],3)
 			if x: connected = False; break
 			for i in r:
@@ -71,15 +71,15 @@ class Tun(injector):
 	        	SNI_HOST = self.extraxt_sni(self.conf())
 	        	context = ssl.SSLContext(ssl.PROTOCOL_TLS)
 	        	s = context.wrap_socket(s,server_hostname=str(SNI_HOST))
-	        	self.logs(f'Handshaked successfully to {SNI_HOST}')
-	        	self.logs(f"protocol : {context.get_ciphers()[0]['protocol']}")
+	        	self.logs(f'{G}Handshaked successfully to {SNI_HOST}{GR}')
+	        	self.logs(f"{G}protocol : {context.get_ciphers()[0]['protocol']}{GR}")
 	        	client.send(b"HTTP/1.1 200 Connection Established\r\n\r\n")
 	        elif int(self.conn_mode(self.conf())) == 3:
 	        	SNI_HOST = self.extraxt_sni(self.conf())
 	        	context = ssl.SSLContext(ssl.PROTOCOL_TLS)
 	        	s = context.wrap_socket(s,server_hostname=str(SNI_HOST))
-	        	self.logs(f'Handshaked successfully to {SNI_HOST}')
-	        	self.logs(f"protocol : {context.get_ciphers()[0]['protocol']}")
+	        	self.logs(f'{G}Handshaked successfully to {SNI_HOST}{GR}')
+	        	self.logs(f"{G}protocol : {context.get_ciphers()[0]['protocol']}{GR}")
 	        	injector.connection(self,client, s,str(host),str(port))
 	        else:
 	        	injector.connection(self,client, s,str(host),str(port))

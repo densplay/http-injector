@@ -123,12 +123,12 @@ class injector:
 	        
 	        if int(self.auto_rep(self.conf())) == 1 or int(self.auto_rep(self.conf())) == 2:
 	        	status = s.recv(1024).split('\n'.encode())[0]
-	        	self.logs(status.decode())
+	        	self.logs(G+status.decode()+GR)
 	       
 	        client.send(b"HTTP/1.1 200 Connection Established\r\n\r\n")
 	        if int(self.auto_rep(self.conf())) == 2:
 	        	status = s.recv(1024).split('\n'.encode())[0]
-	        	self.logs(status.decode())
+	        	self.logs(G+status.decode()+GR)
 	       
 	        
 	        

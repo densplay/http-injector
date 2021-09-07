@@ -47,13 +47,13 @@ class sshRunn:
 				for line in response.stdout:
 					line = line.decode('utf-8',errors='ignore').lstrip(r'(debug1|Warning):').strip() + '\r'
 					if 'compat_banner: no match:' in line:
-						self.logs(f"{G}handshake starts\nserver :{line.split(':')[2]}")
-					elif 'Server host key' in line:self.logs(line)
-					elif 'kex: algorithm:' in line:self.logs(line)
-					elif 'kex: host key algorithm:' in line:self.logs(line)
-					elif 'kex: server->client cipher:' in line:self.logs(line)
+						self.logs(f"{G}SSH-2.0-{line.split(':')[2]}{GR}")
+					elif 'Server host key' in line:self.logs(G+line+GR)
+					elif 'kex: algorithm:' in line:self.logs(G+line+GR)
+					elif 'kex: host key algorithm:' in line:self.logs(G+line+GR)
+					elif 'kex: server->client cipher:' in line:self.logs(G+line+GR)
 					elif 'Next authentication method: password' in line:self.logs(G+'Authenticate to password'+GR)
-					elif 'Authentication succeeded (password).' in line:self.logs('Authentication Comleted')
+					elif 'Authentication succeeded (password).' in line:self.logs(G+'Authentication Completed'+GR)
 					elif 'pledge: proc' in line:self.logs(G+'CONNECTED SUCCESSFULLY '+GR)
 					elif 'Permission denied' in line:self.logs(R+'username or password are inncorect '+GR)
 					elif 'Connection closed' in line:self.logs(R+'Connection closed ' +GR)
