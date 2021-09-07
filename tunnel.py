@@ -95,7 +95,7 @@ class Tun(injector):
 		    sockt.bind(('', self.LISTEN_PORT))
 		    sockt.listen(0)
 		    
-		    self.logs(G+'Waiting for incoming connection to : {}:{}\n'.format(self.localip,self.LISTEN_PORT)+GR)
+		    self.logs(G+'Waiting for incoming connection to : {}:{}'.format(self.localip,self.LISTEN_PORT)+GR)
 		except OSError:
 		    self.logs(O+'Port already used by another process\nRun script again'+GR)
 		    
