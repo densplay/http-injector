@@ -4,7 +4,7 @@ is_alive_ping()
 {
 	ping -c 1 -s 8 $1 > /dev/null
 #	[ $? -eq 0 ] && echo Node with IP: $i is up.
-	sleep 3
+	sleep 10
 }
 
 host=`cat settings.ini | grep "host ="| awk '{print $3}'`

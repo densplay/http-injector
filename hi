@@ -53,7 +53,7 @@ function connect() {
 	if [ "$var" = "SUCCESSFULLY" ];then 
 		echo -e "${YELLOW}==========[CONNECTED]=========="
 		echo -e "${SCOLOR}"
-		screen -AmdS nohub ./pinger
+		#screen -AmdS nohub ./pinger
 		chmod +x proxification
 		iptables --flush
 		echo -e "${GREEN}"
@@ -95,3 +95,7 @@ do
 	fi 
 
 done
+
+
+
+

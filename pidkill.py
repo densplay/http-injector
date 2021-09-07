@@ -4,12 +4,10 @@ def handler():
     print('killing process ...')
     cmd = subprocess.Popen(['ps', '-A'], stdout=subprocess.PIPE)
     output, error = cmd.communicate()
-    target_process = "python"
+    target_process = ("python","pinger","screen","redsocks","proxification")
     for line in output.splitlines():
-        if target_process in str(line):
+        if any(s in line for s in target_process):
             pid = int(line.split()[0])
-            os.system(f'kill {pid} 2> /dev/null')
-            os.system(f'pkill screen 2> /dev/null')
-            os.system(f'screen -wipe 2> /dev/null')
+            os.system(f'kill {pid}')
 
 handler()
