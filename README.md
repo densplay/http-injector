@@ -28,7 +28,7 @@ past your data into file settings.ini
 
 (root is required in android )
 
-[+] ```git clone https://github.com/jeelsboobz/http-injector.git```
+[+] ```git clone https://github.com/densplay/http-injector.git```
 
 # steps :
 
