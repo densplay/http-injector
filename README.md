@@ -36,9 +36,7 @@ past your data into file settings.ini
 
 [+] ```cd http-injector```
 
-[+] ```chmod +x hi```
-
-[+] ```chmod +x pinger```
+[+] ```chmod +x hi pinger```
 
 [+] ```sudo ./hi```
 
