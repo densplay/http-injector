@@ -38,6 +38,8 @@ past your data into file settings.ini
 
 [+] ```chmod +x hi```
 
+[+] ```chmod +x pinger```
+
 [+] ```sudo ./hi```
 
 * choose your connection mode:
