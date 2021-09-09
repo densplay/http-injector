@@ -44,7 +44,7 @@ function connect() {
 		exit
 	fi
 
-	echo -e "${YELLOW}===========[STARTED]===========${SCOLOR}"
+	echo -e "${YELLOW}===========[STARTEDD]===========${SCOLOR}"
 
 	sleep 10
 	cat logs.txt
