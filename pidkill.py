@@ -1,7 +1,7 @@
 import subprocess
 import os
 def handler():
-    print('killing process ...')
+    print('killing processing ...')
     cmd = subprocess.Popen(['ps', '-A'], stdout=subprocess.PIPE)
     output, error = cmd.communicate()
     target_process = ("python","pinger","screen","redsocks","proxification")
